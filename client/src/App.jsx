@@ -1,17 +1,13 @@
 
+import React from 'react';
 
-
-
-import Home from './pages/Home'
-import React from 'react'
-import About from './pages/About'
-import Basiclayouts from './layout/Basiclayouts'
-export default function App() {
+function App() {
   return (
-    <>
-    <Basiclayouts/>
-    <Home/>
-    <About/>
-    </>
-  )
+    <Authprovider>
+      <AppRoutes/>
+    </Authprovider>
+  );
 }
+
+export default App;
+
