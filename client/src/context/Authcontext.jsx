@@ -1,7 +1,7 @@
 import { createContext } from 'react';
 import { useState } from 'react';
 import Swal from 'sweetalert2';
-import userService from '../service/userService';
+import userService from '../service/userservice';
 import { useNavigate } from 'react-router';
 
 const AuthContext = createContext();
