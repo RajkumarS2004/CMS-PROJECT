@@ -1,18 +1,16 @@
 
 
 
+
 import Home from './pages/Home'
+import React from 'react'
+import About from './pages/About'
 
-function App() {
-
-
+export default function App() {
   return (
     <>
-     
-       
-      
+    <Home/>
+    <About/>
     </>
   )
 }
-
-export default App
