@@ -13,11 +13,11 @@ class UserService {
       this.db = JSON.parse(data);
     }
   }
-  addUser(username,email, password, dept,  country) {
+  addUser(email, dept, state, country, password) {
     if (this.isUserExists(email)) {
       throw new Error("user already exists");
     }
-    this.db.users.push({username,email, dept, country, password });
+    this.db.users.push({ email, dept, state, country, password });
     localStorage.removeItem("db");
     localStorage.setItem("db", JSON.stringify(this.db));
   }
