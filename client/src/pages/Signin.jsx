@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
+import AuthContext from '../context/Authcontext';
 
 function Signin() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    const { signin } = useContext(AuthContext) || {};
 
     function handleSubmit(event) {
         event.preventDefault();
-        if (email === "admin@gmail.com" && password === "admin") {
+        if (signin) {
+            signin(email, password);
+        } else if (email === "admin@gmail.com" && password === "admin") {
             Swal.fire({
                 title: "Success",
                 text: "Login is successful",
                 icon: "success"
+            }).then(() => {
+                navigate('/dashboard/Intro');
             });
         } else {
             Swal.fire({

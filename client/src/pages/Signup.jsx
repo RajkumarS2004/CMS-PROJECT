@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import AuthContext from '../context/Authcontext';
 
-export default function Signup() {
-  const [form, setForm] = useState({
-    username: '',
-    email: '',
-    password: '',
-    department: '',
-    country: '',
-  });
+export default function SignUp() {
+  const [email, setEmail] = useState('');
+  const [dept, setDept] = useState('');
+  const [state, setState] = useState('');
+  const [country, setCountry] = useState('');
+  const [password, setPassword] = useState('');
+  const { signup } = useContext(AuthContext) || {};
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle signup logic here
-    alert('Signup submitted!');
-  };
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (signup) {
+      signup(email, dept, state, country, password);
+    } else {
+      Swal.fire({
+        title: 'Error',
+        text: 'Signup function not available',
+        icon: 'error'
+      });
+    }
+  }
 
   return (
     <div className="flex items-center justify-center bg-gradient-to-br from-[#fb6a09] via-[#004945] to-black min-h-[calc(100vh-144px)] py-10 px-4 sm:px-8">
@@ -29,50 +35,38 @@ export default function Signup() {
           </p>
           <form className="w-full max-w-md space-y-5" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-amber-50 mb-1" htmlFor="username">Username</label>
-              <input
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
-                type="text"
-                id="username"
-                name="username"
-                value={form.username}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
               <label className="block text-amber-50 mb-1" htmlFor="email">Email</label>
               <input
                 className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
                 type="email"
                 id="email"
                 name="email"
-                value={form.email}
-                onChange={handleChange}
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 required
               />
             </div>
             <div>
-              <label className="block text-amber-50 mb-1" htmlFor="password">Password</label>
-              <input
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
-                type="password"
-                id="password"
-                name="password"
-                value={form.password}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label className="block text-amber-50 mb-1" htmlFor="department">Department</label>
+              <label className="block text-amber-50 mb-1" htmlFor="dept">Department</label>
               <input
                 className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
                 type="text"
-                id="department"
-                name="department"
-                value={form.department}
-                onChange={handleChange}
+                id="dept"
+                name="dept"
+                value={dept}
+                onChange={e => setDept(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-amber-50 mb-1" htmlFor="state">State</label>
+              <input
+                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
+                type="text"
+                id="state"
+                name="state"
+                value={state}
+                onChange={e => setState(e.target.value)}
                 required
               />
             </div>
@@ -83,8 +77,20 @@ export default function Signup() {
                 type="text"
                 id="country"
                 name="country"
-                value={form.country}
-                onChange={handleChange}
+                value={country}
+                onChange={e => setCountry(e.target.value)}
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-amber-50 mb-1" htmlFor="password">Password</label>
+              <input
+                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
                 required
               />
             </div>

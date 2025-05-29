@@ -29,13 +29,13 @@ export default function Approutes() {
                         <Dashboardlayout/>
                     </Privateroute>
                 )}
-            >    
-
-
-                <Route path="*" element={<Notfound/>}/>
+            >   
+             <Route path="/dashboard/Intro" element={<Intro />} /> 
 
             </Route>
-            <Route path="/" element={<Basiclayouts/>}></Route>
+                <Route path="*" element={<Notfound/>}/>
+
+          
         </Routes>
     );
 }

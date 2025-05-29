@@ -7,7 +7,7 @@ export default function Privateroute({ children }) {
     const navigate = useNavigate();
     useEffect(() => {
         if (!isAuth) {
-            navigate('/login');
+            navigate('/Signin');
         }
     }, [isAuth, navigate]);
     return children;
