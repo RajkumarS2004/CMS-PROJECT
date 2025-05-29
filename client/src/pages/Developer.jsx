@@ -38,7 +38,7 @@ function Developer() {
         <div className="flex items-center justify-center bg-gradient-to-br from-[#fb6a09] via-[#004945] to-black min-h-[calc(100vh-144px)] py-10 px-4 sm:px-8">
             <div className="w-full max-w-2xl bg-black/60 rounded-xl shadow-2xl p-8 border border-gray-800 backdrop-blur-md">
                 <div className="flex flex-col items-center justify-center">
-                    <h1 className="text-4xl font-bold mb-4 text-[#fb6a09]">About Us</h1>
+                    <h1 className="text-4xl font-bold mb-4 text-[#fb6a09]">Meet Our  Developers</h1>
                     <p className="text-lg text-amber-50 max-w-md text-center mb-8">
                         Meet our passionate MERN Stack Developers, each specializing in a core technology to deliver robust, scalable, and dynamic web solutions.
                     </p>
