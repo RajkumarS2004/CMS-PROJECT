@@ -1,16 +1,17 @@
 import { Route,Routes } from "react-router";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Developer from "./pages/Developer";
-import Signin from "./pages/Signin";
-import Signup from "./pages/Signup";
-import Notfound from "./pages/Notfound";
-import Basiclayouts from "./layout/Basiclayouts";
+import Home from "../pages/Home";
+import About from "../pages/About";
+import Developer from "../pages/Developer";
+import Signin from "../pages/Signin";
+import Signup from "../pages/Signup";
+import Notfound from "../pages/Notfound";
+import Basiclayouts from "../layout/Basiclayouts";
+import Dashboardlayout from "../layout/Dashboardlayouts";
 import Privateroute from './Privateroute'
+import Intro from "../pages/dashboard/Intro";       
 
 
-
-function Approutes() {
+export default function Approutes() {
     return (
         <Routes>
             <Route path="/" element={<Basiclayouts/>}>
@@ -34,9 +35,7 @@ function Approutes() {
                 <Route path="*" element={<Notfound/>}/>
 
             </Route>
-            
+            <Route path="/" element={<Basiclayouts/>}></Route>
         </Routes>
     );
 }
-
-export default Approutes;
