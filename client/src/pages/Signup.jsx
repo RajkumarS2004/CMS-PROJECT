@@ -94,12 +94,13 @@ export default function SignUp() {
                 required
               />
             </div>
-            <button
-              type="submit"
-              className="w-full bg-[#fb6a09] hover:bg-[#e05c00] text-white font-semibold py-2 rounded-lg transition-colors"
-            >
-              Sign Up
-            </button>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="min-w-[200px] mt-4 px-6 py-3  bg-[#fb6a09] hover:bg-[#e05c00]  text-white font-bold rounded-full shadow-xl transition-all duration-200 text-xl">
+                Sign Up
+              </button>
+            </div>
           </form>
         </div>
       </div>

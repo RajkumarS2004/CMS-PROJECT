@@ -16,11 +16,11 @@ function Home() {
                         <span className="text-6xl">🛒</span>
                     </div>
                     <h1 className="text-4xl font-bold mb-4 text-[#fb6a09] text-center">
-                        Product Catalog CMS
+                        Expense Tracker
                     </h1>
                     <p className="text-lg text-amber-50 max-w-md text-center mb-10">
                         <span className="font-semibold text-[#fb6a09]">Modern, Fast, Secure.</span> <br />
-                        Manage your products with ease and style.
+                        Manage your expenses with ease and style.
                     </p>
                     <div className="flex gap-4 w-full justify-center">
                         <button
