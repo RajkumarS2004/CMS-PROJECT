@@ -1,19 +1,22 @@
-
 import { useContext, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router";
 import AuthContext from "../context/Authcontext";
 
+
+
 const PATHS = [
     { path: '/dashboard/Intro', text: 'intro' },
+    { path: '/dashboard/Summarycard', text: 'summary' },
+    { path: '/dashboard/Transactionform', text: 'transaction' },
+    { path: '/dashboard/Expensechart',text: 'expense chart'}
+    
 ];
 
 export default function Dashboardlayouts() {
     const location = useLocation();
     const navigate = useNavigate();
     const { logout } = useContext(AuthContext);
-    // Upgrade main container and content area CSS
-    // Replace main's className with upgraded styles
-
+ 
     useEffect(() => {
         if (location.pathname === "/dashboard") {
             navigate("/dashboard/Intro", { replace: true });
@@ -40,7 +43,7 @@ export default function Dashboardlayouts() {
                     ))}
                 </nav>
                 <button 
-                onClick={logout}
+                    onClick={logout}
                     className="mt-auto w-full py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-semibold shadow transition"
                 >
                     Logout
