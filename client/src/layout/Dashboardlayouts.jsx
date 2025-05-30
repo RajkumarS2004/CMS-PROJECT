@@ -46,9 +46,11 @@ export default function Dashboardlayouts() {
                     Logout
                 </button>
             </aside>
-            <main className="flex-1 min-h-screen overflow-auto p-10">
+           
+            <main className="flex-1 min-h-screen overflow-auto ">
                 <Outlet />
             </main>
+             
         </div>
     );
 }

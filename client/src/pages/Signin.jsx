@@ -61,7 +61,7 @@ function Signin() {
                     </div>
                     <button
                         type="submit"
-                        className="w-full mt-4 px-6 py-3 bg-gradient-to-r from-[#fb6a09] via-[#004945] to-black text-white font-bold rounded-full shadow-xl hover:from-[#fb6a09]/80 hover:to-black/80 transition-all duration-200 text-xl"
+                        className="min-w-[200px] mt-4 px-6 py-3  bg-[#fb6a09] hover:bg-[#e05c00]  text-white font-bold rounded-full shadow-xl transition-all duration-200 text-xl"
                     >
                         Login
                     </button>
