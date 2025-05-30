@@ -1,10 +1,11 @@
-
 import { useContext, useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router";
 import AuthContext from "../context/Authcontext";
 
 const PATHS = [
-    { path: '/dashboard/Intro', text: 'intro' },
+    { path: '/dashboard/Intro', text: 'Intro' },
+    { path: '/dashboard/Transactionitem', text: 'Transactionitem' },
+    { path: '/dashboard/Transactionlist', text: 'Transactionlist' }, // Updated for clarity
 ];
 
 export default function Dashboardlayouts() {

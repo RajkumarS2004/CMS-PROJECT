@@ -9,7 +9,8 @@ import Basiclayouts from "../layout/Basiclayouts";
 import Dashboardlayout from "../layout/Dashboardlayouts";
 import Privateroute from './Privateroute'
 import Intro from "../pages/dashboard/Intro";       
-
+import Transactionitem from "../pages/dashboard/Transactionitem";
+import Transactionlist from "../pages/dashboard/Transactionlist";
 
 export default function Approutes() {
     return (
@@ -31,7 +32,11 @@ export default function Approutes() {
                 )}
             >   
              <Route path="/dashboard/Intro" element={<Intro />} /> 
-
+             <Route path="/dashboard/Transactionitem" element={<Transactionitem />} />
+             <Route path="/dashboard/Transactionlist" element={<Transactionlist 
+                transactions={[]} 
+                onDelete={() => {}} 
+             />} />
             </Route>
                 <Route path="*" element={<Notfound/>}/>
 
