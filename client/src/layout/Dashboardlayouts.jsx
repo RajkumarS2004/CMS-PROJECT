@@ -5,12 +5,11 @@ import AuthContext from "../context/Authcontext";
 
 
 const PATHS = [
-    { path: '/dashboard/Intro', text: 'intro' },
-    { path: '/dashboard/Summarycard', text: 'summary' },
-    { path: '/dashboard/Transactionform', text: 'transaction' },
-    { path: '/dashboard/Expensechart',text: 'expense chart'}
-    { path: '/dashboard/Transactionitem', text: 'Transactionitem' },
-    { path: '/dashboard/Transactionlist', text: 'Transactionlist' }, // Updated for clarity
+    { path: '/dashboard/Intro', text: 'About' },
+    { path: '/dashboard/Summarycard', text: 'Account Summary' },
+    { path: '/dashboard/Transactionform', text: 'Add Expense' },
+    { path: '/dashboard/Expensechart',text: 'Expense Chart' },
+    { path: '/dashboard/Transactionlist', text: 'Transaction List' }, 
 
 ];
 
@@ -26,7 +25,7 @@ export default function Dashboardlayouts() {
     }, [location.pathname, navigate]);
 
     return (
-        <div className="flex min-h-screen bg-gray-100">
+        <div className="flex min-h-screen w-screen bg-gradient-to-br from-[#fb6a09] via-[#004945] to-black">
             <aside className="p-8 w-60 sticky top-0 h-screen bg-gradient-to-b from-gray-900 to-gray-800 flex flex-col items-center shadow-2xl">
                 <span className="text-3xl font-extrabold mb-8 text-white tracking-wide">Dashboard</span>
                 <nav className="flex flex-col gap-3 w-full">

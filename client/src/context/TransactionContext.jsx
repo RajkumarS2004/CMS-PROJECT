@@ -30,13 +30,17 @@ export const TransactionProvider = ({ children }) => {
     <TransactionContext.Provider
       value={{
         transactions,
+        setTransactions,
         addTransaction,
         incomeTotal,
         expenseTotal,
-        balance
+        balance,
+        transactionItems: transactions
       }}
     >
-      {children}
+      <div style={{ background: 'white', color: 'black', minHeight: '100vh' }}>
+        {children}
+      </div>
     </TransactionContext.Provider>
   );
 };

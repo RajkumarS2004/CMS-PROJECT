@@ -13,8 +13,6 @@ import Transactionform from "../pages/dashboard/Transactionform";
 import { TransactionProvider } from "../context/TransactionContext";
 import Summarycard from "../pages/dashboard/Summarycard";
 import Expensechart from "../pages/dashboard/Expensechart";
-
-import Transactionitem from "../pages/dashboard/Transactionitem";
 import Transactionlist from "../pages/dashboard/Transactionlist";
 
 
@@ -44,9 +42,6 @@ export default function Approutes() {
              <Route path="/dashboard/Summarycard" element={<Summarycard />} /> 
              <Route path="/dashboard/Transactionform" element={<Transactionform/>} /> 
              <Route path="/dashboard/Expensechart" element={<Expensechart/>} /> 
-
-
-             <Route path="/dashboard/Transactionitem" element={<Transactionitem />} />
              <Route path="/dashboard/Transactionlist" element={<Transactionlist 
                 transactions={[]} 
                 onDelete={() => {}} 
