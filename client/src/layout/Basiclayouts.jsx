@@ -17,7 +17,7 @@ export default function Basiclayout() {
           />
           <div className="flex items-center space-x-3">
             <h1 className="text-2xl sm:text-3xl font-bold tracking-wide">
-              RDM <span className="text-indigo-400">CMS</span>
+              RDM <span className="text-indigo-400">Expense Tracker</span>
             </h1>
           </div>
 
@@ -127,7 +127,7 @@ function Footer() {
     <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-gray-400 py-5 text-center border-t border-gray-800">
       <span className="text-sm tracking-wide">
         &copy; {new Date().getFullYear()}{" "}
-        <span className="font-semibold text-white">RDM CMS Project</span>. All
+        <span className="font-semibold text-white">RDM Expense Tracker Project</span>. All
         rights reserved.
       </span>
     </footer>

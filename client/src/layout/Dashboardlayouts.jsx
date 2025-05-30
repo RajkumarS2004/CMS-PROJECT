@@ -9,7 +9,9 @@ const PATHS = [
     { path: '/dashboard/Summarycard', text: 'summary' },
     { path: '/dashboard/Transactionform', text: 'transaction' },
     { path: '/dashboard/Expensechart',text: 'expense chart'}
-    
+    { path: '/dashboard/Transactionitem', text: 'Transactionitem' },
+    { path: '/dashboard/Transactionlist', text: 'Transactionlist' }, // Updated for clarity
+
 ];
 
 export default function Dashboardlayouts() {
@@ -49,9 +51,11 @@ export default function Dashboardlayouts() {
                     Logout
                 </button>
             </aside>
-            <main className="flex-1 min-h-screen overflow-auto p-10">
+           
+            <main className="flex-1 min-h-screen overflow-auto ">
                 <Outlet />
             </main>
+             
         </div>
     );
 }
