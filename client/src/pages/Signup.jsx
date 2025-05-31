@@ -113,11 +113,10 @@ import AuthContext from '../context/Authcontext';
             <div className="text-center mt-4">
               <span className="text-amber-100">Already have an account? </span>
               <button
-                type="button"
-                className="text-[#fb6a09] font-semibold hover:underline"
-                onClick={() => navigate('/signin')}
+                type="submit"
+                className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
               >
-                Sign In
+               Signup
               </button>
             </div>
           </form>

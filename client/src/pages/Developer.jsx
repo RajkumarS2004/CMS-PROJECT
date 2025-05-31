@@ -51,7 +51,7 @@ function Developer() {
                         >
                             <div className={`w-24 h-24 rounded-full mb-4 border-4 ${dev.border} shadow-md overflow-hidden`}>
                                 <img
-                                    src="/src/assets/LOGO.png"
+                                    src="/client/src/assets/LOGO.png"
                                     alt={dev.name}
                                     className="object-cover w-full h-full"
                                 />
