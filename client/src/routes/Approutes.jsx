@@ -15,7 +15,7 @@ import Summarycard from "../pages/dashboard/Summarycard";
 import Expensechart from "../pages/dashboard/Expensechart";
 import Transactionlist from "../pages/dashboard/Transactionlist";
 
-function AppRoutes() {
+function Approutes() {
   return (
     <Routes>
       <Route path="/" element={<Basiclayouts />}>
@@ -54,4 +54,4 @@ function AppRoutes() {
   );
 }
 
-export default AppRoutes;
+export default Approutes;
