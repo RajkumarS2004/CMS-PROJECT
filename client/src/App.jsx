@@ -1,10 +1,12 @@
-import React from 'react'
-import About from './pages/About'
+import { AuthProvider } from "./context/Authcontext";
+import AppRoutes from "./routes/AppRoutes";
 
-export default function App() {
+function App() {
   return (
-    <>
-    <About/>
-    </>
-  )
+    <AuthProvider>
+      <AppRoutes />
+    </AuthProvider>
+  );
 }
+
+export default App;
