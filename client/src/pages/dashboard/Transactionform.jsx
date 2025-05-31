@@ -124,14 +124,30 @@ export default function Transactionform() {
         rows={3}
       ></textarea>
 
-      {/* Date */}
-      <input
-        type="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-        className="w-full bg-[#18181b] text-green-300 border border-green-700 rounded-3xl px-6 py-4 mb-8 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
-        required
-      />
+      {/* Date with Custom Icon */}
+      <div className="relative mb-8">
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          className="w-full bg-[#18181b] text-green-300 border border-green-700 rounded-3xl px-6 py-4 pr-14 focus:outline-none focus:ring-2 focus:ring-green-500 transition appearance-none"
+          required
+        />
+        <svg
+          className="w-6 h-6 absolute right-5 top-1/2 transform -translate-y-1/2 text-green-400 pointer-events-none"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+          />
+        </svg>
+      </div>
 
       <button
         type="submit"

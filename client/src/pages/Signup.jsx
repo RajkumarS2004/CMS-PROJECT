@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import AuthContext from '../context/Authcontext';
 
-export default function SignUp() {
+ function SignUp() {
   const [email, setEmail] = useState('');
   const [dept, setDept] = useState('');
   const [state, setState] = useState('');
@@ -105,7 +105,7 @@ export default function SignUp() {
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
+                className="min-w-[200px] mt-4 px-8 py-3 bg-gradient-to-r from-[#fb6a09] via-[#004945] to-black text-white font-bold rounded-full shadow-lg hover:shadow-[#fb6a09]/40 transition-transform transform hover:scale-105 text-xl"
               >
                 Sign Up
               </button>
@@ -113,11 +113,10 @@ export default function SignUp() {
             <div className="text-center mt-4">
               <span className="text-amber-100">Already have an account? </span>
               <button
-                type="button"
-                className="text-[#1e90ff] font-semibold hover:underline"
-                onClick={() => navigate('/signin')}
+                type="submit"
+                className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
               >
-                Sign In
+               Signup
               </button>
             </div>
           </form>
@@ -126,3 +125,4 @@ export default function SignUp() {
     </div>
   );
 }
+export default SignUp;

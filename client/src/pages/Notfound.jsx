@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default function NotFound() {
+ function NotFound() {
   return (
     <div className="flex items-center justify-center bg-gradient-to-br from-[#18181b] via-[#27272a] to-[#000] min-h-screen p-6">
       <div className="w-full max-w-2xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl shadow-2xl p-10 flex flex-col items-center text-center">
@@ -20,3 +20,4 @@ export default function NotFound() {
     </div>
   );
 }
+export default NotFound;
