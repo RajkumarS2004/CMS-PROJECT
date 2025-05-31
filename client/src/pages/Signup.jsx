@@ -10,7 +10,7 @@ import AuthContext from '../context/Authcontext';
   const [country, setCountry] = useState('');
   const [password, setPassword] = useState('');
   const { signup } = useContext(AuthContext) || {};
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -105,18 +105,18 @@ import AuthContext from '../context/Authcontext';
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="min-w-[200px] mt-4 px-8 py-3 bg-gradient-to-r from-[#fb6a09] via-[#004945] to-black text-white font-bold rounded-full shadow-lg hover:shadow-[#fb6a09]/40 transition-transform transform hover:scale-105 text-xl"
+                className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
               >
-                Sign Up
+               Signup
               </button>
             </div>
             <div className="text-center mt-4">
               <span className="text-amber-100">Already have an account? </span>
               <button
                 type="submit"
-                className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
+                className="px-8 py-3 text-lg font-semibold  bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
               >
-               Signup
+               Signin
               </button>
             </div>
           </form>
