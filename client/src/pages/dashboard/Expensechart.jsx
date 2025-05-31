@@ -76,7 +76,7 @@ export default function Expensechart() {
                         </Pie>
                         <Tooltip
                             contentStyle={{ background: '#232323', borderRadius: 12, border: '1px solid #22223b', boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
-                            itemStyle={{ color: '#e5e7eb', fontWeight: 500 }}
+                            itemStyle={{ color: '#fff', fontWeight: 500 }} // changed to white
                         />
                         <Legend layout="horizontal" verticalAlign="bottom" align="center" iconType="circle" />
                     </PieChart>
@@ -108,7 +108,7 @@ export default function Expensechart() {
                         </Pie>
                         <Tooltip
                             contentStyle={{ background: '#232323', borderRadius: 12, border: '1px solid #22223b', boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
-                            itemStyle={{ color: '#222', fontWeight: 500 }}
+                            itemStyle={{ color: '#fff', fontWeight: 500 }} // changed to white
                         />
                         <Legend layout="horizontal" verticalAlign="bottom" align="center" iconType="circle" />
                     </PieChart>
