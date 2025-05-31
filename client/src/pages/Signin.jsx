@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
-import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
-import AuthContext from '../context/Authcontext';
+import { useState, useContext, useEffect } from "react";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+import AuthContext from "../context/Authcontext";
 
 function Signin() {
-    const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
     const { signin } = useContext(AuthContext) || {};
@@ -30,45 +30,61 @@ function Signin() {
         }
     }
 
-    return (
-        <div className="flex items-center justify-center bg-gradient-to-br from-[#fb6a09] via-[#004945] to-black min-h-[calc(100vh-144px)] py-10 px-4 sm:px-8">
-            <div className="w-full max-w-2xl bg-black/60 rounded-xl shadow-2xl p-8 border border-gray-800 backdrop-blur-md">
-                <form onSubmit={handleSubmit} className="flex flex-col items-center gap-6">
-                    <h2 className="text-4xl font-bold mb-2 text-[#fb6a09] drop-shadow">Sign-In</h2>
-                    <div className="w-full flex flex-col gap-2">
-                        <label htmlFor="Email" className="text-lg font-medium text-[#fb6a09]">Email</label>
-                        <input
-                            type="email"
-                            name="username"
-                            placeholder="Enter Email"
-                            value={email}
-                            onChange={e => setEmail(e.target.value)}
-                            required
-                            className="px-4 py-3 rounded-xl border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] bg-black/40 text-lg text-amber-50 transition"
-                        />
-                    </div>
-                    <div className="w-full flex flex-col gap-2">
-                        <label htmlFor="password" className="text-lg font-medium text-[#fb6a09]">Password</label>
-                        <input
-                            type="password"
-                            name="password"
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            placeholder="Enter password"
-                            required
-                            className="px-4 py-3 rounded-xl border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] bg-black/40 text-lg text-amber-50 transition"
-                        />
-                    </div>
-                    <button
-                        type="submit"
-                        className="min-w-[200px] mt-4 px-6 py-3  bg-[#fb6a09] hover:bg-[#e05c00]  text-white font-bold rounded-full shadow-xl transition-all duration-200 text-xl"
-                    >
-                        Login
-                    </button>
-                </form>
-            </div>
-        </div>
-    );
+  return (
+    <div className="flex items-center justify-center bg-gradient-to-br from-[#0f0f0f] via-[#004945] to-black min-h-[calc(100vh-144px)] py-16 px-6">
+      <div className="w-full max-w-2xl bg-black/60 rounded-3xl shadow-2xl p-10 border border-white/10 backdrop-blur-md transition-all duration-300 hover:shadow-[#fb6a09]/30">
+        <form onSubmit={handleSubmit} className="flex flex-col items-center gap-8">
+          {/* Icon */}
+          <div className="mb-4 animate-bounce">
+            <span className="text-6xl drop-shadow-[0_2px_8px_rgba(251,106,9,0.6)]">🔐</span>
+          </div>
+          <h2 className="text-5xl font-extrabold mb-2 text-[#fb6a09] text-center tracking-wide drop-shadow-lg">
+            Sign-In
+          </h2>
+          <p className="text-lg text-amber-100 text-center mb-4 max-w-md">
+            Welcome back! <span className="font-semibold text-[#fb6a09]">Securely access your dashboard.</span>
+          </p>
+
+          <div className="w-full flex flex-col gap-2">
+            <label htmlFor="email" className="text-lg font-semibold text-[#fb6a09]">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter Email"
+              required
+              className="px-5 py-4 rounded-2xl border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] bg-black/40 text-lg text-amber-100 placeholder:text-[#fb6a09]/70 transition-all duration-300"
+            />
+          </div>
+
+          <div className="w-full flex flex-col gap-2">
+            <label htmlFor="password" className="text-lg font-semibold text-[#fb6a09]">
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter Password"
+              required
+              className="px-5 py-4 rounded-2xl border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] bg-black/40 text-lg text-amber-100 placeholder:text-[#fb6a09]/70 transition-all duration-300"
+            />
+          </div>
+
+          <button
+                type="submit"
+                className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
+              >
+               Login
+              </button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
 export default Signin;

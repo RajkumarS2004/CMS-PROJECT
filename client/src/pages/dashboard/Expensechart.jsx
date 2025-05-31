@@ -1,7 +1,10 @@
-import  { useContext } from 'react';
+import { useContext } from 'react';
 import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import { TransactionContext } from '../../context/TransactionContext';
-const COLORS = ['#EF4444', '#F97316', '#EAB308', '#10B981', '#3B82F6', '#8B5CF6'];
+
+const COLORS = [
+    '#EF4444', '#F97316', '#EAB308', '#10B981', '#3B82F6', '#8B5CF6'
+];
 
 export default function Expensechart() {
     const { transactions } = useContext(TransactionContext);
@@ -32,49 +35,85 @@ export default function Expensechart() {
         { name: 'Expense', value: expenseTotal }
     ];
 
-    return (
-        <div className="w-full max-w-xl mx-auto p-4 bg-white rounded-xl shadow space-y-8">
-            <h2 className="text-xl font-semibold text-center mb-4">Income vs Expense</h2>
-            <ResponsiveContainer width="100%" height={250}>
-                <PieChart>
-                    <Pie
-                        data={incomeVsExpenseData}
-                        dataKey="value"
-                        nameKey="name"
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={80}
-                        label
-                    >
-                        {incomeVsExpenseData.map((_, index) => (
-                            <Cell key={`cell-income-expense-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                    </Pie>
-                    <Tooltip />
-                    <Legend layout="horizontal" verticalAlign="bottom" align="center" />
-                </PieChart>
-            </ResponsiveContainer>
+    // Updated color palette for a more modern and vibrant look
+    const UPGRADED_COLORS = [
+        '#22d3ee', // cyan-400
+        '#a78bfa', // purple-400
+        '#f472b6', // pink-400
+        '#facc15', // yellow-400
+        '#34d399', // green-400
+        '#60a5fa', // blue-400
+        '#fb7185', // rose-400
+        '#fbbf24', // amber-400
+        '#38bdf8', // sky-400
+        '#818cf8', // indigo-400
+    ];
 
-            <h2 className="text-xl font-semibold text-center mb-4">Expense Breakdown by Category</h2>
-            <ResponsiveContainer width="100%" height={300}>
-                <PieChart>
-                    <Pie
-                        data={expenseData}
-                        dataKey="value"
-                        nameKey="name"
-                        cx="50%"
-                        cy="50%"
-                        outerRadius={100}
-                        label
-                    >
-                        {expenseData.map((_, index) => (
-                            <Cell key={`cell-category-${index}`} fill={COLORS[index % COLORS.length]} />
-                        ))}
-                    </Pie>
-                    <Tooltip />
-                    <Legend layout="horizontal" verticalAlign="bottom" align="center" />
-                </PieChart>
-            </ResponsiveContainer>
+    return (
+        <div className="w-full max-w-3xl mx-auto p-4 md:p-8 bg-gradient-to-br from-[#18181b] via-[#232323] to-[#22223b] rounded-2xl shadow-lg border border-green-900/30 space-y-10">
+            <h2 className="text-2xl font-bold text-center text-green-800 mb-4 tracking-wide">
+                Income vs Expense
+            </h2>
+            <div className="flex justify-center items-center bg-gradient-to-tr from-[#232323] to-[#18181b] rounded-xl shadow p-4 mb-8 border border-green-900/20">
+                <ResponsiveContainer width="100%" height={220}>
+                    <PieChart>
+                        <Pie
+                            data={incomeVsExpenseData}
+                            dataKey="value"
+                            nameKey="name"
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={70}
+                            label={({ name, percent }) =>
+                                `${name}: ${(percent * 100).toFixed(0)}%`
+                            }
+                            stroke="#18181b"
+                            strokeWidth={2}
+                        >
+                            {incomeVsExpenseData.map((_, index) => (
+                                <Cell key={`cell-income-expense-${index}`} fill={UPGRADED_COLORS[index % UPGRADED_COLORS.length]} />
+                            ))}
+                        </Pie>
+                        <Tooltip
+                            contentStyle={{ background: '#232323', borderRadius: 12, border: '1px solid #22223b', boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
+                            itemStyle={{ color: '#e5e7eb', fontWeight: 500 }}
+                        />
+                        <Legend layout="horizontal" verticalAlign="bottom" align="center" iconType="circle" />
+                    </PieChart>
+                </ResponsiveContainer>
+            </div>
+
+            <h2 className="text-2xl font-bold text-center text-green-800 mb-4 tracking-wide">
+                Expense by Category
+            </h2>
+            <div className="flex justify-center items-center bg-gradient-to-tr from-[#232323] to-[#18181b] rounded-xl shadow p-4 border border-green-900/20">
+                <ResponsiveContainer width="100%" height={260}>
+                    <PieChart>
+                        <Pie
+                            data={expenseData}
+                            dataKey="value"
+                            nameKey="name"
+                            cx="50%"
+                            cy="50%"
+                            outerRadius={95}
+                            label={({ name, percent }) =>
+                                `${name}: ${(percent * 100).toFixed(0)}%`
+                            }
+                            stroke="#18181b"
+                            strokeWidth={2}
+                        >
+                            {expenseData.map((_, index) => (
+                                <Cell key={`cell-category-${index}`} fill={UPGRADED_COLORS[index % UPGRADED_COLORS.length]} />
+                            ))}
+                        </Pie>
+                        <Tooltip
+                            contentStyle={{ background: '#232323', borderRadius: 12, border: '1px solid #22223b', boxShadow: '0 2px 8px rgba(0,0,0,0.10)' }}
+                            itemStyle={{ color: '#222', fontWeight: 500 }}
+                        />
+                        <Legend layout="horizontal" verticalAlign="bottom" align="center" iconType="circle" />
+                    </PieChart>
+                </ResponsiveContainer>
+            </div>
         </div>
     );
 }

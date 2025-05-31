@@ -26,30 +26,37 @@ export default function SignUp() {
   }
 
   return (
-    <div className="flex items-center justify-center bg-gradient-to-br from-[#fb6a09] via-[#004945] to-black min-h-[calc(100vh-144px)] py-10 px-4 sm:px-8">
-      <div className="w-full max-w-2xl bg-black/60 rounded-xl shadow-2xl p-8 border border-gray-800 backdrop-blur-md">
+    <div className="flex items-center justify-center bg-gradient-to-br from-[#0f0f0f] via-[#004945] to-black min-h-[calc(100vh-144px)] py-16 px-6">
+      <div className="w-full max-w-3xl bg-black/60 rounded-3xl shadow-2xl p-10 border border-white/10 backdrop-blur-md transition-all duration-300 hover:shadow-[#fb6a09]/30">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-4xl font-bold mb-4 text-[#fb6a09]">Sign Up</h1>
-          <p className="text-lg text-amber-50 max-w-md text-center mb-8">
-            Create your account to access the CMS platform.
+          {/* Icon */}
+          <div className="mb-6 animate-bounce">
+            <span className="text-6xl drop-shadow-[0_2px_8px_rgba(251,106,9,0.6)]">📝</span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 text-[#fb6a09] text-center tracking-wide">
+            Sign Up
+          </h1>
+          <p className="text-lg md:text-xl text-amber-100 text-center mb-10 leading-relaxed max-w-xl">
+            <span className="font-semibold text-[#fb6a09]">Create your account</span> to access the CMS platform.
           </p>
-          <form className="w-full max-w-md space-y-5" onSubmit={handleSubmit}>
+          <form className="w-full max-w-md space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-amber-50 mb-1" htmlFor="email">Email</label>
+              <label className="block text-amber-50 mb-1 font-semibold" htmlFor="email">Email</label>
               <input
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
+                className="w-full px-4 py-3 rounded-xl bg-gray-900/80 text-white border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] transition-all"
                 type="email"
                 id="email"
                 name="email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
+                autoComplete="email"
               />
             </div>
             <div>
-              <label className="block text-amber-50 mb-1" htmlFor="dept">Department</label>
+              <label className="block text-amber-50 mb-1 font-semibold" htmlFor="dept">Department</label>
               <input
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
+                className="w-full px-4 py-3 rounded-xl bg-gray-900/80 text-white border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] transition-all"
                 type="text"
                 id="dept"
                 name="dept"
@@ -59,9 +66,9 @@ export default function SignUp() {
               />
             </div>
             <div>
-              <label className="block text-amber-50 mb-1" htmlFor="state">State</label>
+              <label className="block text-amber-50 mb-1 font-semibold" htmlFor="state">State</label>
               <input
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
+                className="w-full px-4 py-3 rounded-xl bg-gray-900/80 text-white border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] transition-all"
                 type="text"
                 id="state"
                 name="state"
@@ -71,9 +78,9 @@ export default function SignUp() {
               />
             </div>
             <div>
-              <label className="block text-amber-50 mb-1" htmlFor="country">Country</label>
+              <label className="block text-amber-50 mb-1 font-semibold" htmlFor="country">Country</label>
               <input
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
+                className="w-full px-4 py-3 rounded-xl bg-gray-900/80 text-white border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] transition-all"
                 type="text"
                 id="country"
                 name="country"
@@ -83,22 +90,34 @@ export default function SignUp() {
               />
             </div>
             <div>
-              <label className="block text-amber-50 mb-1" htmlFor="password">Password</label>
+              <label className="block text-amber-50 mb-1 font-semibold" htmlFor="password">Password</label>
               <input
-                className="w-full px-4 py-2 rounded-lg bg-gray-900 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#fb6a09]"
+                className="w-full px-4 py-3 rounded-xl bg-gray-900/80 text-white border border-[#fb6a09]/30 focus:outline-none focus:ring-2 focus:ring-[#fb6a09] transition-all"
                 type="password"
                 id="password"
                 name="password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 required
+                autoComplete="new-password"
               />
             </div>
             <div className="flex justify-center">
               <button
                 type="submit"
-                className="min-w-[200px] mt-4 px-6 py-3  bg-[#fb6a09] hover:bg-[#e05c00]  text-white font-bold rounded-full shadow-xl transition-all duration-200 text-xl">
+                className="px-8 py-3 text-lg font-semibold rounded-full bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
+              >
                 Sign Up
+              </button>
+            </div>
+            <div className="text-center mt-4">
+              <span className="text-amber-100">Already have an account? </span>
+              <button
+                type="button"
+                className="text-[#1e90ff] font-semibold hover:underline"
+                onClick={() => navigate('/signin')}
+              >
+                Sign In
               </button>
             </div>
           </form>
