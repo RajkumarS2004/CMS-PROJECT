@@ -1,10 +1,8 @@
-import  { useState, useContext } from 'react';
+import { useState, useContext } from 'react';
 import { TransactionContext } from '../../context/TransactionContext';
 
-
-
 export default function Transactionform() {
-    const { addTransaction } = useContext(TransactionContext);
+  const { addTransaction } = useContext(TransactionContext);
 
   const [type, setType] = useState('income');
   const [amount, setAmount] = useState('');
@@ -14,7 +12,6 @@ export default function Transactionform() {
   const [notes, setNotes] = useState('');
   const [date, setDate] = useState('');
 
-  // Category options based on type
   const incomeCategories = ['Salary', 'Saving'];
   const expenseCategories = ['Food', 'Travel', 'Rent', 'Shopping', 'Other'];
 
@@ -27,10 +24,9 @@ export default function Transactionform() {
       accountType: type === 'expense' ? accountType : null,
       category: category === 'Other' ? customCategory : category,
       notes,
-      date
+      date,
     };
     addTransaction(newTransaction);
-    // Reset form
     setAmount('');
     setAccountType('cash');
     setCategory(type === 'income' ? 'Salary' : 'Food');
@@ -40,30 +36,35 @@ export default function Transactionform() {
   };
 
   return (
-     <form onSubmit={handleSubmit} className="bg-white p-6 rounded-xl shadow-md w-full max-w-lg mx-auto space-y-4">
-      <h2 className="text-2xl font-semibold text-center">Add Transaction</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-xl mx-auto p-8 bg-gradient-to-br from-[#18181b] via-[#22223b] to-[#27272a] rounded-3xl shadow-2xl border border-green-700/80"
+    >
+      <h2 className="text-3xl font-extrabold text-green-400 text-center mb-6 tracking-widest">
+        Add Transaction
+      </h2>
 
       {/* Transaction Type */}
-      <div className="flex gap-4 justify-center">
-        <label className="flex items-center">
+      <div className="flex gap-12 justify-center mb-6">
+        <label className="flex items-center cursor-pointer select-none">
           <input
             type="radio"
             value="income"
             checked={type === 'income'}
             onChange={() => setType('income')}
-            className="mr-2"
+            className="accent-green-400 mr-3"
           />
-          Income
+          <span className="text-green-300 font-semibold">Income</span>
         </label>
-        <label className="flex items-center">
+        <label className="flex items-center cursor-pointer select-none">
           <input
             type="radio"
             value="expense"
             checked={type === 'expense'}
             onChange={() => setType('expense')}
-            className="mr-2"
+            className="accent-red-400 mr-3"
           />
-          Expense
+          <span className="text-red-400 font-semibold">Expense</span>
         </label>
       </div>
 
@@ -73,7 +74,7 @@ export default function Transactionform() {
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
         placeholder="Enter amount"
-        className="w-full border rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="w-full bg-[#18181b] text-green-300 placeholder-green-600 border border-green-700 rounded-3xl px-6 py-4 mb-5 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
         required
       />
 
@@ -82,7 +83,7 @@ export default function Transactionform() {
         <select
           value={accountType}
           onChange={(e) => setAccountType(e.target.value)}
-          className="w-full border rounded p-2 focus:outline-none"
+          className="w-full bg-[#18181b] text-green-300 border border-green-700 rounded-3xl px-6 py-4 mb-5 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
         >
           <option value="cash">Cash</option>
           <option value="card">Card</option>
@@ -94,21 +95,23 @@ export default function Transactionform() {
       <select
         value={category}
         onChange={(e) => setCategory(e.target.value)}
-        className="w-full border rounded p-2 focus:outline-none"
+        className="w-full bg-[#18181b] text-green-300 border border-green-700 rounded-3xl px-6 py-4 mb-5 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
       >
         {(type === 'income' ? incomeCategories : expenseCategories).map((cat) => (
-          <option key={cat} value={cat}>{cat}</option>
+          <option key={cat} value={cat}>
+            {cat}
+          </option>
         ))}
       </select>
 
-      {/* Custom Category if 'Other' selected */}
+      {/* Custom Category if 'Other' */}
       {category === 'Other' && (
         <input
           type="text"
           value={customCategory}
           onChange={(e) => setCustomCategory(e.target.value)}
           placeholder="Enter custom category"
-          className="w-full border rounded p-2 focus:outline-none"
+          className="w-full bg-[#18181b] text-green-300 placeholder-green-600 border border-green-700 rounded-3xl px-6 py-4 mb-5 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
         />
       )}
 
@@ -117,7 +120,8 @@ export default function Transactionform() {
         value={notes}
         onChange={(e) => setNotes(e.target.value)}
         placeholder="Add a note (optional)"
-        className="w-full border rounded p-2 focus:outline-none"
+        className="w-full bg-[#18181b] text-green-300 placeholder-green-600 border border-green-700 rounded-3xl px-6 py-4 mb-5 focus:outline-none focus:ring-2 focus:ring-green-500 transition resize-none"
+        rows={3}
       ></textarea>
 
       {/* Date */}
@@ -125,16 +129,16 @@ export default function Transactionform() {
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
-        className="w-full border rounded p-2 focus:outline-none"
+        className="w-full bg-[#18181b] text-green-300 border border-green-700 rounded-3xl px-6 py-4 mb-8 focus:outline-none focus:ring-2 focus:ring-green-500 transition"
         required
       />
 
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        className="w-full bg-gradient-to-r from-green-700 to-green-900 text-white py-4 rounded-3xl font-extrabold shadow-lg hover:from-green-900 hover:to-green-700 transition-all tracking-wide"
       >
         Add Transaction
       </button>
     </form>
   );
-};
+}
