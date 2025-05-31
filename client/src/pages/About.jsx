@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function About() {
+ function About() {
   return (
     <div className="flex items-center justify-center bg-gradient-to-br from-[#18181b] via-[#27272a] to-[#22223b] min-h-[calc(100vh-144px)] px-4 py-10 sm:px-8">
       <div className="w-full max-w-3xl bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 border border-white/10 transition-all duration-300">
@@ -47,3 +47,4 @@ export default function About() {
     </div>
   );
 }
+export default About;

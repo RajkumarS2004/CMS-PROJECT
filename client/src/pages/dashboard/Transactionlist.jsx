@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { TransactionContext } from "../../context/TransactionContext";
 import Swal from "sweetalert2";
 
-export default function Transactionlist() {
+ function Transactionlist() {
   const { transactions, setTransactions } = useContext(TransactionContext);
 
   const handleDelete = (id) => {
@@ -70,3 +70,4 @@ export default function Transactionlist() {
     </div>
   );
 }
+export default Transactionlist;
