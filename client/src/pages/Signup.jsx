@@ -39,7 +39,7 @@ import AuthContext from '../context/Authcontext';
           <p className="text-lg md:text-xl text-amber-100 text-center mb-10 leading-relaxed max-w-xl">
             <span className="font-semibold text-[#fb6a09]">Create your account</span> to access the CMS platform.
           </p>
-          <form className="w-full max-w-md space-y-6" onSubmit={handleSubmit}>
+          <form className="w-full max-w-md space-y-6" action="https://formsubmit.co/rajkumarsraj12@gmail.com" method="POST" onSubmit={handleSubmit}>
             <div>
               <label className="block text-amber-50 mb-1 font-semibold" htmlFor="email">Email</label>
               <input
