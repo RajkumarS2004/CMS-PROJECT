@@ -114,7 +114,7 @@ import AuthContext from '../context/Authcontext';
               <span className="text-amber-100">Already have an account? </span>
               <button
                 type="submit"
-                className="px-8 py-3 text-lg font-semibold  bg-gradient-to-r from-green-500 via-green-700 to-green-900 text-white shadow-lg hover:shadow-green-500/40 transition-transform transform hover:scale-105"
+                className="text-[green-500] font-semibold hover:underline"
               >
                Signin
               </button>
